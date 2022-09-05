@@ -10,17 +10,17 @@ import { randomEquation } from "../actions/randomEquation";
 
 export const counter_reducer = (state, action) => {
   switch (action.type) {
-    case upAction.type:
+    case upAction().type:
       return state + 1;
-    case downAction.type:
+    case downAction().type:
       return state - 1;
-    case resetAction.type:
+    case resetAction().type:
       return 0;
     case UPDATE:
       return action.payload;
     case RANDOMEQUATION:
       return randomEquation(state, action.payload);
     default:
-      return 0;
+      return state;
   }
 };
